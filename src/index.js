@@ -3,8 +3,8 @@ import express from 'express';
 import cors from 'cors';
 
 import clienteController from './controller/clienteController.js';
-import tipoVeiculoController from './controller/tipoVeiculoController.js';
-import veiculoController from './controller/veiculoController.js';
+// import tipoVeiculoController from './controller/tipoVeiculoController.js';
+// import veiculoController from './controller/veiculoController.js';
 
 const server = express();
 
