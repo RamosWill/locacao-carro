@@ -11,11 +11,11 @@ endpoints.post('/cliente', async (req, resp) => {
 
         resp.send("cliente adicionado com sucesso!");
 
-    } 
+    }
     catch (error) {
         resp.status(500).send(error.message)
     }
-    
+
 });
 
 endpoints.get('/cliente/:nome', async (req, resp) => {
@@ -23,15 +23,15 @@ endpoints.get('/cliente/:nome', async (req, resp) => {
         let nome = req.params.nome;
         let resposta = await procurarPorNome(nome);
 
-        if(resposta.length ==  0) {
+        if (resposta.length == 0) {
             resp.send('Não conseguimos encontrar nenhum cliente com este nome!')
         } else {
             resp.send(resposta);
         }
-        
+
     } catch (error) {
-            resp.status(500).send(error.message);
-        }
+        resp.status(500).send(error.message);
+    }
 });
 
 endpoints.get('/todosClientes', async (req, resp) => {
@@ -40,8 +40,8 @@ endpoints.get('/todosClientes', async (req, resp) => {
         resp.send(resposta)
 
     } catch (error) {
-            resp.status(500).send(error.message)
-        }
+        resp.status(500).send(error.message)
+    }
 });
 
 endpoints.put('/cliente/:id', async (req, resp) => { ///////// verificação para nao enviar infos vazias ou sem atender quantidade minima de caracteres!!!!!!!!
@@ -71,6 +71,6 @@ endpoints.delete('/cliente/:id', async (req, resp) => {
         resp.status(500).send(error.message)
     }
 })
-        
+
 
 export default endpoints;
