@@ -7,7 +7,7 @@ export async function salvarCliente (infos) {
     `
 
     let resposta = await conexao.query(sql, [infos.nome, infos.email, infos.telefone, infos.cpf, infos.cnh]);
-    // infos.id = infos.insertId;
+    infos.id = infos.insertId;
     let dados = resposta[0]
     return dados;
 };
